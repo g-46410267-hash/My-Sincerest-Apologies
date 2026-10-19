@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Incident report</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%A9%BA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FDEBEE;--card:#FFFFFF;--ink:#3B1A22;--muted:#7A5560;--teal:#D63A5A;--teal-h:#B92C4A;--on-teal:#FFFFFF;--line:#F3CDD5;--accent:#C2243F;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2A1217;--card:#381A21;--ink:#FBEAEE;--muted:#D5AEB8;--teal:#F27C94;--teal-h:#F79AAD;--on-teal:#2A1217;--line:#5A2C37;--accent:#FF8FA3;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2A1217;--card:#381A21;--ink:#FBEAEE;--muted:#D5AEB8;--teal:#F27C94;--teal-h:#F79AAD;--on-teal:#2A1217;--line:#5A2C37;--accent:#FF8FA3;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center;padding:20px}
+main{position:relative;z-index:1;box-shadow:0 8px 30px rgba(214,58,90,.12);width:100%;max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ecg{display:block;width:100%;height:64px;border-bottom:1px solid var(--line);background:var(--bg)}
+.ecg path{fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ecg path.flow{stroke-dasharray:6 0;animation:scroll 6s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-320px)}}
+.body{padding:28px 26px 30px}
+.meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:14px;margin:0 0 22px}
+h1{font:600 clamp(28px,7vw,36px)/1.15 "Spectral",Georgia,serif;margin:0 0 16px;letter-spacing:-.01em}
+p{margin:0 0 14px;max-width:62ch}
+.lead{font-family:"Spectral",Georgia,serif;font-size:20px;line-height:1.55}
+ul{margin:0 0 18px;padding:0;list-style:none}
+li{padding:12px 0 12px 18px;border-left:3px solid var(--teal);margin-bottom:10px}
+li b{display:block;font-weight:600}
+li span{color:var(--muted)}
+.file{border:1px solid var(--line);border-radius:10px;padding:4px 16px;margin:0 0 22px}
+.file div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line)}
+.file div:last-child{border-bottom:0}
+.file dt{color:var(--muted)}
+.file dd{margin:0;text-align:right;font-weight:500}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+button{font:500 16px/1 "Public Sans",system-ui,sans-serif;min-height:48px;padding:0 22px;border-radius:10px;border:1.5px solid var(--teal);cursor:pointer;background:var(--teal);color:var(--on-teal);transition:background .15s}
+button:hover{background:var(--teal-h);border-color:var(--teal-h)}
+button.ghost{background:transparent;color:var(--teal)}
+button.ghost:hover{background:var(--bg)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.sig{font-family:"Spectral",Georgia,serif;font-style:italic;color:var(--muted);margin-top:20px}
+.steady{color:var(--accent)}
+.faces{display:flex;gap:14px;font-size:48px;line-height:1;margin:6px 0 18px}
+.faces span{display:inline-block;animation:sob 1.8s ease-in-out infinite}
+.faces span:nth-child(2){animation-delay:.3s}.faces span:nth-child(3){animation-delay:.6s}.faces span:nth-child(4){animation-delay:.9s}
+@keyframes sob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(4px) rotate(4deg)}}
+.hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hearts i{position:absolute;bottom:-40px;font-style:normal;color:var(--teal);opacity:.22;animation:rise 14s linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) rotate(18deg)}}
+.burst{font-size:34px;letter-spacing:6px;margin:4px 0 14px}
+@media (prefers-reduced-motion:reduce){.hearts i{animation:none;bottom:auto;top:calc(var(--d)*7%)}}
+@media (prefers-reduced-motion:reduce){.ecg path.flow,.faces span{animation:none}}
+</style>
+</head>
+<body>
+<div class="hearts" aria-hidden="true"><i style="left:6%;font-size:22px;animation-delay:-0s;--d:1">♥</i><i style="left:18%;font-size:16px;animation-delay:-6s;--d:4">♥</i><i style="left:31%;font-size:26px;animation-delay:-12s;--d:7">♥</i><i style="left:46%;font-size:18px;animation-delay:-2s;--d:2">♥</i><i style="left:59%;font-size:24px;animation-delay:-10s;--d:6">♥</i><i style="left:72%;font-size:16px;animation-delay:-4s;--d:3">♥</i><i style="left:84%;font-size:28px;animation-delay:-8s;--d:5">♥</i><i style="left:94%;font-size:20px;animation-delay:-14s;--d:8">♥</i></div>
+<main>
+<svg class="ecg" id="ecg" viewBox="0 0 560 64" preserveAspectRatio="none" aria-hidden="true"><path id="line" class="flow"/></svg>
+<div class="body" id="view" aria-live="polite"></div>
+</main>
+<script>
+/* Edit these lines to make it yours. */
+var CFG = {
+  her: "Doctor",
+  full: "Dr Satrangisha Keziah Anne",
+  him: "your husband",
+  what: "I hurt you, and I know it. Consider this a formal, signed, slightly dramatic apology.",
+  cost: "Our peace.",
+  root: "My failure to be equally mindful of how things are perceived, not just how it sounds to me."
+};
+
+var P = [
+ function(){return '<p class="meta"><span>Urgent: patient needs attention</span><span>Confidential (mostly)</span></p><h1>I have something to say, '+CFG.her+'. 💌</h1><dl class="file"><div><dt>Filed by</dt><dd>'+CFG.him+' (the patient)</dd></div><div><dt>Reviewing surgeon</dt><dd>'+CFG.full+'</dd></div><div><dt>Condition</dt><dd>Deeply sorry, mildly dramatic</dd></div><div><dt>Prognosis</dt><dd>Entirely up to you</dd></div></dl><div class="row"><button data-go="1">Open report</button></div>'},
+ function(){return head(1)+'<h1>I made a mistake. 🥺</h1><p class="lead">'+CFG.what+'</p><p>You didn’t cause this and you didn’t deserve it. It was all me.</p>'+nav(0,2)},
+ function(){return head(2)+'<h1>Morbidity and mortality review</h1><p>In your world, mistakes get reviewed honestly, with no excuses. I’m presenting my own case. The patient has no defence.</p><ul><li><b>What happened</b><span>I was insensitive.</span></li><li><b>What it cost</b><span>'+CFG.cost+'</span></li><li><b>Where I went wrong</b><span>'+CFG.root+'</span></li></ul>'+nav(1,3)},
+ function(){return head(3)+'<h1>Treatment plan 🩺</h1><ul><li><b>Be sensitive</b><span>I will read the room. Yes, even the quiet rooms.</span></li><li><b>Be mindful</b><span>Of how it lands on you, not just how it sounds in my head.</span></li><li><b>Show it over time</b><span>Words today are cheap. Consistency is the real treatment.</span></li><li><b>Respect your pace</b><span>You’re the surgeon. You run the schedule.</span></li></ul><p>Possible side effects: extra hugs and terrible jokes. 💕</p>'+nav(2,4)},
+ function(){return head(4)+'<h1>The big question 💘</h1><p class="lead">'+CFG.her+', would you consider taking me back?</p><p>Please select one of the following options.</p><div class="row"><button data-go="5">Yes, I’ll take you back</button><button class="ghost" data-go="6">I need more time</button></div><div class="row"><button class="ghost" data-go="3">Go back</button></div>'},
+ function(){return '<p class="meta"><span>Case closed</span><span>Readmitted</span></p><h1>Thank you. ❤️</h1><div class="burst" aria-hidden="true">💖💕💗💞💓</div><p class="lead">Discharge papers signed. Prognosis: extremely good.</p><p>Side effects may include excessive hugging, questionable humour, and lifelong loyalty.</p><p>I love you, and I’m sorry. ❤️</p><p class="sig">Yours, '+CFG.him.replace(/^your /,'')+'</p>'},
+ function(){return '<p class="meta"><span>Error 404</span><span>Option not found</span></p><h1>Hold on, '+CFG.her+'! 💔</h1><p class="lead">Your medical licence doesn’t cover declining this particular patient.</p><p>Look how sad he’ll be:</p><div class="faces" aria-hidden="true"><span>🥺</span><span>😿</span><span>🐶</span><span>😭</span></div><p>Please reconsider the correct medical procedure.</p><div class="row"><button data-go="5">Fine, I’ll reconsider</button></div>'}
+];
+function head(n){return '<p class="meta"><span>Page '+n+' of 4</span><span>Incident report</span></p>'}
+function nav(b,f){return '<div class="row"><button class="ghost" data-go="'+b+'">Back</button><button data-go="'+f+'">Continue</button></div>'}
+
+function wave(beats,steady){
+  var d='M0 36',x=0,seed=3;
+  for(var i=0;i<beats;i++){
+    var gap=steady?80:(i%3===2?150:(i%3===1?70:100));
+    d+=' L'+(x+gap*0.35)+' 36 L'+(x+gap*0.4)+' 31 L'+(x+gap*0.45)+' 36 L'+(x+gap*0.55)+' 36 L'+(x+gap*0.6)+' 10 L'+(x+gap*0.66)+' 56 L'+(x+gap*0.72)+' 36 L'+(x+gap*0.85)+' 36 L'+(x+gap*0.92)+' 30 L'+(x+gap)+' 36';
+    x+=gap;
+  }
+  return d;
+}
+var line=document.getElementById('line'),view=document.getElementById('view');
+function show(i){
+  view.innerHTML=P[i]();
+  line.setAttribute('d',wave(12,i===5));
+  line.classList.toggle('steady',i===5);
+  var h=view.querySelector('h1');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}
+  window.scrollTo(0,0);
+}
+view.addEventListener('click',function(e){var b=e.target.closest('button[data-go]');if(b)show(+b.dataset.go)});
+show(0);
+</script>
+</body>
+</html>
